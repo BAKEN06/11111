@@ -1,0 +1,230 @@
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #020302;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.cta {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: white;
+    color: #3d3d3d;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.section-image {
+    width: 95%;
+    height: auto;
+    right: 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content:flex-end ;
+}
+
+.team-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    text-align: center;
+    margin: 20px;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #4CAF50;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #f1f1f1;
+}
+
+#about {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+
+} 
+#about div{
+    width: 50%;
+}
+.service-list {
+    opacity: 0; /* Начальное состояние */
+    animation: fadeIn 1s forwards; /* Анимация при загрузке */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Конечное состояние */
+    }
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-around; /* Распределение по горизонтали */
+    margin: 20px 0; /* Отступы сверху и снизу */
+}
+
+.service-item {
+    opacity: 0;
+    transform: scale(1.1);
+    animation: fadeInScale 0.4s forwards;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center; /* Выравнивание текста по центру */
+    width: 20%; /* Ширина элементов */
+    height: 550px;
+
+}
+
+.service-image-wrapper {
+    width: 250px; /* Ширина контейнера для изображения */
+    height: 250px; /* Высота контейнера для изображения */
+    border-radius:1000%; /* Обрезание в круг */
+    overflow: hidden; /* Скрытие лишнего содержимого */
+    margin: 0 auto; /* Центрирование изображения */
+}
+
+.service-image {
+    width: 100%; /* Адаптивное изображение */
+    height: auto; /* Автоматическая высота */
+  
+}
+#services {
+    background-color: aqua;
+    height: 750px;
+
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.service-button {
+    padding: 20px 25px;
+    background-color: #327c00;
+    color: white;
+    border: 5px solid #8d5d05;
+    border-radius: 50px; 
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+
+.service-button:hover {
+    background-color: #693001;
+}
+
+
+.t1 {
+    font-size: 50px;
+}
+.q1 {
+    padding: 5%;
+}
+
+
+.toggle-checkbox {
+    display: none; /* Скрыть чекбокс */
+}
+
+.modal {
+    display: none; /* Скрыть по умолчанию */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    opacity: 0; /* Начальная прозрачность */
+    transform: translateY(-20px); /* Сдвиг вверх */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Плавный переход */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 400px;
+    width: 90%; /* Ширина */
+}
+
+.toggle-checkbox:checked + .modal {
+    display: flex; /* Показать модал при чекнутом состоянии */
+}
+
+.toggle-checkbox:checked + .modal .modal-content {
+    opacity: 1; /* Полная видимость */
+    transform: translateY(0); /* Вернуть на место */
+}
